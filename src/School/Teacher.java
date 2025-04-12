@@ -18,9 +18,13 @@ public class Teacher extends Person {
         if (courses.size() >= 3) {
             System.out.println("Only 3 courses may be taught at a time.");
             return false;
+        } else if (courses.contains(course)) {
+            System.out.println("Courses already added.");
+            return false;
+        } else {
+            courses.add(course);
+            return true;
         }
-        courses.add(course);
-        return true;
     }
 
     public ArrayList<Course> getCourses() {

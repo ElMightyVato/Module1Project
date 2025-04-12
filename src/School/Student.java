@@ -18,9 +18,13 @@ public class Student extends Person {
         if (courses.size() >= 5) {
             System.out.println("Only 5 courses may be assigned.");
             return false;
+        } else if (courses.contains(course)) {
+            System.out.println("Courses already added.");
+            return false;
+        } else {
+            courses.add(course);
+            return true;
         }
-        courses.add(course);
-        return true;
     }
 
     public ArrayList<Course> getCourses() {
